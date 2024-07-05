@@ -2,12 +2,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using System.Threading;
 
-
 namespace SwagLabs_Test_Framework
 {
     [TestClass]
     public class TestExecution
     {
+        private TestContext testContextInstance;
+        public TestContext TestContext
+        {
+            get { return testContextInstance; }
+            set { testContextInstance = value; }
+        }
+
         [TestInitialize]
         public void TestInit()
         {
@@ -24,10 +30,10 @@ namespace SwagLabs_Test_Framework
         [Description("Verify successful login with valid credentials.")]
         public void Login_TC_001()
         {
-            
             LoginPage loginPage = new LoginPage();
-            BasePage.OpenUrl("https://www.saucedemo.com/v1/");
+            BasePage.OpenUrl("https://www.saucedemo.com/");
             loginPage.Login("standard_user", "secret_sauce");
+            // Add any relevant assertions or checks here
         }
 
         [TestMethod]
@@ -36,9 +42,9 @@ namespace SwagLabs_Test_Framework
         {
             LoginPage loginPage = new LoginPage();
             BasePage.OpenUrl("https://www.saucedemo.com/");
-            loginPage.Login("user", "secret_sauce");
+            loginPage.Login("user", "wrong_password");
             Thread.Sleep(3000);
-            BasePage.driver.FindElement(By.ClassName("error-button")).Click();
+            Assert.IsTrue(BasePage.driver.FindElement(By.ClassName("error-button")).Displayed);
         }
 
         [TestMethod]
@@ -47,13 +53,11 @@ namespace SwagLabs_Test_Framework
         {
             LoginPage loginPage = new LoginPage();
             HomePage home = new HomePage();
-            BasePage.OpenUrl("https://www.saucedemo.com/v1/");
+            BasePage.OpenUrl("https://www.saucedemo.com/");
             loginPage.Login("standard_user", "secret_sauce");
             home.SelectProduct();
             string pr_name = BasePage.driver.FindElement(By.CssSelector(".inventory_details_name")).Text;
-
             Assert.AreEqual("Sauce Labs Backpack", pr_name);
-            Thread.Sleep(5000);
         }
 
         [TestMethod]
@@ -62,16 +66,11 @@ namespace SwagLabs_Test_Framework
         {
             LoginPage loginPage = new LoginPage();
             HomePage home = new HomePage();
-
-            BasePage.OpenUrl("https://www.saucedemo.com/v1/");
-
+            BasePage.OpenUrl("https://www.saucedemo.com/");
             loginPage.Login("standard_user", "secret_sauce");
             home.AddToCart();
-
-            Thread.Sleep(5000);
+            // Add assertions or additional checks as needed
         }
-
-        //multiple products to cart and think for others too
 
         [TestMethod]
         [Description("Verify Cart button click.")]
@@ -79,13 +78,10 @@ namespace SwagLabs_Test_Framework
         {
             LoginPage loginPage = new LoginPage();
             HomePage home = new HomePage();
-
-            BasePage.OpenUrl("https://www.saucedemo.com/v1/");
-
+            BasePage.OpenUrl("https://www.saucedemo.com/");
             loginPage.Login("standard_user", "secret_sauce");
             home.ViewCart();
-
-            Thread.Sleep(5000);
+            // Add assertions or additional checks as needed
         }
 
         [TestMethod]
@@ -94,17 +90,12 @@ namespace SwagLabs_Test_Framework
         {
             LoginPage loginPage = new LoginPage();
             HomePage home = new HomePage();
-
-            BasePage.OpenUrl("https://www.saucedemo.com/v1/");
-
+            BasePage.OpenUrl("https://www.saucedemo.com/");
             loginPage.Login("standard_user", "secret_sauce");
             home.AddToCart();
             home.ViewCart();
-
-            string cart_pr=BasePage.driver.FindElement(By.ClassName("inventory_item_name")).Text;
+            string cart_pr = BasePage.driver.FindElement(By.ClassName("inventory_item_name")).Text;
             Assert.AreEqual("Sauce Labs Backpack", cart_pr);
-
-            Thread.Sleep(3000);
         }
     }
 }

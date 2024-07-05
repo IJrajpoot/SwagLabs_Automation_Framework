@@ -42,11 +42,11 @@
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
-              "version": "[3.0.4, )"
+              "version": "[3.4.3, )"
             },
             "MSTest.TestFramework": {
               "target": "Package",
-              "version": "[3.0.4, )"
+              "version": "[3.4.3, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -63,6 +63,22 @@
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
               "version": "[126.0.6478.6100, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Core": {
+              "target": "Package",
+              "version": "[3.5.21022.801, )"
+            },
+            "System.Data.Common": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Data.DataSetExtensions": {
+              "target": "Package",
+              "version": "[4.5.0, )"
             },
             "coverlet.collector": {
               "target": "Package",

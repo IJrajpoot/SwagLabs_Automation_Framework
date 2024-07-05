@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Automation>
+	<Execution>
+		<Login_TC_001>
+			<url>https://www.saucedemo.com/v1/</url>
+			<username>standard_user</username>
+			<password>secret_sauce</password>
+		</Login_TC_001>
+		<Login_TC_001>
+			<url>https://www.saucedemo.com/v1/</url>
+			<username>visual_user</username>
+			<password>secret_sauce</password>
+		</Login_TC_001>
+		<Login_TC_001>
+			<url>https://www.saucedemo.com/v1/</url>
+			<username>locked_out_user</username>
+			<password>secret_sauce</password>
+		</Login_TC_001>
+		<Login_TC_001>
+			<url>https://www.saucedemo.com/v1/</url>
+			<username>problem_user</username>
+			<password>performance_glitch</password>
+		</Login_TC_001>
+	</Execution>
+</Automation>
