@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SwagLabs_Test_Framework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94062903fe6c4ae8e3e703a2cf2e082340940e08")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db889bb5262ba220115918d577acad41f88179eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SwagLabs_Test_Framework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SwagLabs_Test_Framework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
